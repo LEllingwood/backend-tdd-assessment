@@ -14,7 +14,7 @@ In doing so, you'll be demonstrating a basic understanding of the following:
 
 ## Getting Started
 TDD *starts* with setting up a test harness, and writing the tests FIRST, before writing application code.   Think of the test cases that you will need for the `echo` application that you will build.  For a small project like this, it's sufficient to have a single test case named `test_echo.py`.  In the beginning, all tests should fail (of course, because you haven't written anything!)  However, you are proving out the basic execution paths and setup of your program.  
-Pay special attention to the name of the test module: `test_echo.py`.  When writing test modules, start each module filename with the prefix `test*`.  Many testing frameworks are set up to *auto-discover* test modules that adhere to this naming convention.  Auto-discovery is important-- in a continuous integration environment, your tests will be discovered an run when you attempt to push changes to the repo.  Some  CI/CD pipelines will not allow you to push changes to the repo, if they cannot auto-discover and run your tests.  
+Pay special attention to the name of the test module: `test_echo.py`.  When writing test modules, start each module filename with the prefix `test*`.  Many testing frameworks are set up to *auto-discover* test modules that adhere to this naming convention.  Auto-discovery is important-- in a continuous integration environment, your tests will be discovered and run when you attempt to push changes to the repo.  Some  CI/CD pipelines will not allow you to push changes to the repo, if they cannot auto-discover and run your tests.  
 Finally, your application code will reside in the `echo.py` file.
 
 When done, you should have a project directory that looks something like this:
@@ -42,8 +42,7 @@ $ rerun "python -m unittest discover"
 ## Acceptance Criteria
 
 ### Step 1: Display Help
-When the user provides invalid options or supplies the `-h/--help` flag, the
-program should print the following usage message:
+When the user provides invalid options or supplies the `-h/--help` flag, the program should print the following usage message:
 
     usage: echo.py [-h] [-u] [-l] [-t] text
 
