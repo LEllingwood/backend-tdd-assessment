@@ -4,20 +4,19 @@
 import unittest
 import echo
 
-# Your test case class goes here
 
 class TestStringMethods(unittest.TestCase):
     def test_isUpper(self):
-        self.assertTrue('HELLO'.isupper())
-        self.assertFalse('heLlo'.isupper())
+        self.assertTrue(echo.isUpper('hello'), 'HELLO')
+        self.assertFalse(echo.isUpper('hello'), 'heLLo')
 
     def test_isLower(self):
-        self.assertTrue('hello'.islower())
-        self.assertFalse('HEllo'.islower())
+        self.assertTrue(echo.isLower('Hello'), 'hello')
+        self.assertFalse(echo.isLower('hello'), 'HEllo')
 
     def test_isTitle(self):
-        self.assertTrue('This Is String'.istitle())
-        self.assertFalse('this Is String'.istitle())
+        self.assertTrue(echo.isTitle('This Is String'), 'This Is String')
+        self.assertFalse(echo.isTitle('This Is String'), 'this Is string')
 
     pass
 
@@ -36,4 +35,8 @@ def test_help(self):
     self.assertEquals(stdout, usage)
 
 if __name__ == '__main__':
+    # test_methods = TestStringMethods()
+    # test_methods(args)
+    
     unittest.main()
+

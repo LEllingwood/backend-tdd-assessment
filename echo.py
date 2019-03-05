@@ -7,6 +7,7 @@ __author__ = "LEllingwood"
 import sys
 import argparse
 
+
 def create_parser():
     """Creates and returns an argparse cmd line option parser"""
     parser = argparse.ArgumentParser()
@@ -15,7 +16,6 @@ def create_parser():
     parser.add_argument('-t', '--title', help='convert text to titlecase', action='store_true')
     parser.add_argument('text', help='text to be manipulated')
     return parser
-    # code for resulting help messages dependent on argument passed goes here.
 
 
 def isUpper(text):
@@ -30,18 +30,20 @@ def isTitle(text):
     return text.title()
 
 
-def main():
+def main(args):
     """Implementation of echo"""
     parser = create_parser()
     args = parser.parse_args()
     
+    # result = args.text
+
     if not args:
-        # automatically generates an error message:
         parser.print_usage()
         sys.exit(1)
-
+        
     if args.upper:
         print isUpper(args.text)
+        # result = result.upper  PM method
 
     if args.lower:
         print isLower(args.text)
@@ -49,5 +51,6 @@ def main():
     if args.title:
         print isTitle(args.text)
 
+
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1:])
